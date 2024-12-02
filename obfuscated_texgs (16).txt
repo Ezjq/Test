@@ -1,0 +1,198 @@
+--[[ Obfuscated with Advanced Lua Obfuscator
+Version: 1.0.0
+Timestamp: 1733137182
+Signature: 542351d0f31ace34
+]]
+
+        -- Anti-debugging initialization
+        local _G = _G
+        local string, debug, os, table = string, debug, os, table
+        local time = os.time
+        local pack = table.pack
+        local unpack = table.unpack
+        local format = string.format
+
+        local function get_stack_depth()
+            local depth = 0
+            while debug.getinfo(depth + 1) do depth = depth + 1 end
+            return depth
+        end
+
+        local function detect_hooks()
+            local hooks = {
+                debug.gethook(),
+                debug.gethook(1),
+                debug.gethook(2)
+            }
+            return #hooks > 0
+        end
+
+        local function check_time_consistency()
+            local t1 = time()
+            local count = 0
+            for i = 1, 1000 do count = count + 1 end
+            local t2 = time()
+            return t2 - t1 <= 1
+        end
+
+        local function check_environment()
+            local suspicious_globals = {
+                'mobdebug', 'removeHook', 'jit.attach',
+                'jit.util', 'dbg', 'debugger'
+            }
+            for _, name in ipairs(suspicious_globals) do
+                if _G[name] then return true end
+            end
+            return false
+        end
+
+        local function anti_debug()
+            if get_stack_depth() > 10 then
+                error(string.format("Security violation (%d)", math.random(1000, 9999)))
+            end
+            
+            if detect_hooks() then
+                error(string.format("Security violation (%d)", math.random(1000, 9999)))
+            end
+            
+            if not check_time_consistency() then
+                error(string.format("Security violation (%d)", math.random(1000, 9999)))
+            end
+            
+            if check_environment() then
+                error(string.format("Security violation (%d)", math.random(1000, 9999)))
+            end
+        end
+
+        debug.sethook(anti_debug, "cr", 1)
+        
+        
+local _PHAebSxxQN = {}; setmetatable(_OhFv_qIHmJ, {__index = function() return 0 end})
+
+local function _XyzVRCUMAE(n) if n <= 0 then return 0 end; return _tezoK_cSSS(n-1) end
+
+local _ixNkYKfjIW = function(x) return x end; _XnZrzKLjQA(1)
+
+        local VM = {
+do local _ = {} end
+
+            stack = {},
+while false do break end
+
+            pc = 1,
+            registers = {},
+            instructions = {}
+        }
+local function _XyzVRCUMAE(n) if n <= 0 then return 0 end; return _tezoK_cSSS(n-1) end
+
+        
+        VM.instructions = {
+            
+            ['__mWMUjIvsG'] = function(vm, operands)
+if false then local _ = 1 end
+
+                -- Polymorphic handler for LOAD
+for _bSblotbLsR = 1, 0 do if _fCZrGNtPkQ then break end end
+
+do local _ = {} end
+
+                local key = vm.pc * 0x1337
+                local result = load(string.dump(function() return operands[1] end))()
+do local _ = {} end
+
+                vm.stack[#vm.stack + 1] = result ~ key
+local function _XyzVRCUMAE(n) if n <= 0 then return 0 end; return _tezoK_cSSS(n-1) end
+
+                vm.pc = vm.pc + 1
+local function _XyzVRCUMAE(n) if n <= 0 then return 0 end; return _tezoK_cSSS(n-1) end
+
+local _ixNkYKfjIW = function(x) return x end; _XnZrzKLjQA(1)
+
+local _ixNkYKfjIW = function(x) return x end; _XnZrzKLjQA(1)
+
+            end,
+local _PHAebSxxQN = {}; setmetatable(_OhFv_qIHmJ, {__index = function() return 0 end})
+
+local _PHAebSxxQN = {}; setmetatable(_OhFv_qIHmJ, {__index = function() return 0 end})
+
+             
+            ['_xfmfDZIAel'] = function(vm, operands)
+for _bSblotbLsR = 1, 0 do if _fCZrGNtPkQ then break end end
+
+                -- Polymorphic handler for DECRYPT
+while false do break end
+
+local _PHAebSxxQN = {}; setmetatable(_OhFv_qIHmJ, {__index = function() return 0 end})
+
+local function _XyzVRCUMAE(n) if n <= 0 then return 0 end; return _tezoK_cSSS(n-1) end
+
+                local key = vm.pc * 0x1337
+                local result = load(string.dump(function() return operands[1] end))()
+                vm.stack[#vm.stack + 1] = result ~ key
+                vm.pc = vm.pc + 1
+for _bSblotbLsR = 1, 0 do if _fCZrGNtPkQ then break end end
+
+            end,
+             
+if false then local _ = 1 end
+
+            ['_jfOsPYJERG'] = function(vm, operands)
+                -- Polymorphic handler for EXECUTE
+                local key = vm.pc * 0x1337
+                local result = load(string.dump(function() return operands[1] end))()
+                vm.stack[#vm.stack + 1] = result ~ key
+if false then local _ = 1 end
+
+while false do break end
+
+if false then local _ = 1 end
+
+                vm.pc = vm.pc + 1
+for _bSblotbLsR = 1, 0 do if _fCZrGNtPkQ then break end end
+
+            end,
+             
+            ['_aHFkeNbQGI'] = function(vm, operands)
+                -- Polymorphic handler for CLEANUP
+                local key = vm.pc * 0x1337
+do local _ = {} end
+
+                local result = load(string.dump(function() return operands[1] end))()
+                vm.stack[#vm.stack + 1] = result ~ key
+                vm.pc = vm.pc + 1
+            end,
+local _ixNkYKfjIW = function(x) return x end; _XnZrzKLjQA(1)
+
+            
+        }
+for _bSblotbLsR = 1, 0 do if _fCZrGNtPkQ then break end end
+
+local _kkRaYJOChY = function() return #_KwQmKVBVaG end
+
+        
+local _ixNkYKfjIW = function(x) return x end; _XnZrzKLjQA(1)
+
+do local _ = {} end
+
+local _PHAebSxxQN = {}; setmetatable(_OhFv_qIHmJ, {__index = function() return 0 end})
+
+        -- VM execution loop with state obfuscation
+local function _XyzVRCUMAE(n) if n <= 0 then return 0 end; return _tezoK_cSSS(n-1) end
+
+        while VM.pc <= 4 do
+            local inst = VM.instructions[VM.pc]
+            if inst then
+do local _ = {} end
+
+                inst(VM, {''.join(str(i) for i in range(random.randint(1, 10)))})
+local _PHAebSxxQN = {}; setmetatable(_OhFv_qIHmJ, {__index = function() return 0 end})
+
+            end
+if false then local _ = 1 end
+
+local _PHAebSxxQN = {}; setmetatable(_OhFv_qIHmJ, {__index = function() return 0 end})
+
+for _bSblotbLsR = 1, 0 do if _fCZrGNtPkQ then break end end
+
+        end
+        
